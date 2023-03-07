@@ -1,0 +1,233 @@
+* {
+    text-decoration: none;
+    list-style: none;
+}
+html, body {
+    width: 100%;
+    padding: 0px;
+    height: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    background-color: #242582;
+}
+body {
+    display: grid;
+    grid-template-columns: 220px 120px 1fr;
+    grid-template-rows: 100px 140px 1fr;    
+    grid-template-areas: 
+        "nav nav nav"
+        "head pic pic"
+        "side pic pic"
+}
+.nav {
+    grid-area: nav;
+    background: #242582;
+}
+.whosBar {
+    line-height: 100px;
+    font-size: 40px;
+    color:#f64c72;
+    font-weight: 200;
+    text-align: center;
+    margin: 3rem;
+}
+.logout {
+    padding: 0.5rem;
+    font-size: 1rem;
+    float: right;
+    background-color: #f64c72;
+    margin: 2rem 3rem;
+    border-radius: 15px;
+    color: wheat;
+    border: wheat 3px solid;
+}
+.logout:hover {
+    cursor: pointer;
+    background-color: aqua;
+    color: #f64c72;
+    border-color: #f64c72;
+}
+.head {
+    grid-area: head;
+    background: #242582;
+
+}
+.me {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.me img {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    border: 3px solid #7dc0c0;
+}
+.about {
+    grid-area: side;
+    background: #242582;
+}
+.side-menu{
+    position: sticky;
+    top: 0.25rem;
+}
+.about {
+    position: sticky;
+}
+.side-menu a {
+    display: block;
+    line-height: 40px;
+    transition: 0.3s;
+    padding-left: 20px;
+}
+.side-menu a:hover {
+    background: #553d67;
+    padding-left: 40px;
+}
+.side-menu span {
+    font-size: 20px;
+    margin-left: 10px;
+    color: wheat;
+}
+i {
+    color: wheat;
+}
+.window {
+    position: relative;
+}
+.content.active {
+    display: inline;
+}
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.close button {
+    padding: 0.5rem 0.8rem;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: bisque;
+    border-radius: 5px;
+    border-color: aliceblue;
+    color: rgb(188, 144, 64);
+}
+.close button:hover {
+    cursor: pointer;
+    background-color: azure;
+
+}
+p {
+    margin: 0.5rem 2.3rem 0.5rem;
+}
+.pic {
+    grid-area: pic;
+    position: relative;
+}
+img {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.content {
+    display: none;
+}
+.content.active {
+    grid-area: pic;
+    position: absolute;
+    display: inline-block;
+    background-color: antiquewhite;
+    border-radius: 8px;
+    height: auto;
+    top: 20%;
+    left: 10%;
+    right: 10%;
+}
+@media screen and (max-width: 50rem) {
+    body {
+        display: grid;
+        grid-template-columns: 220px 120px 1fr;
+        grid-template-rows: 170px 140px 1fr;    
+        grid-template-areas: 
+            "head nav nav"
+            "side pic pic"
+            "side pic pic"
+    }
+    .head {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .whosBar {
+        font-size: 30px;
+    }
+    .nav {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+}
+@media screen and (max-width: 37rem) {
+    body {
+        display: grid;
+        grid-template-columns: 130px 120px 1fr;
+        grid-template-rows: 170px 140px 1fr;    
+        grid-template-areas: 
+            "head nav nav"
+            "side pic pic"
+            "side pic pic"
+    }
+    .side-menu span {
+        font-size: 10px;
+    }
+}
+@media screen and (max-width: 28rem) {
+    body {
+        display: grid;
+        grid-template-columns: 130px 1fr;
+        grid-template-rows: 170px 1fr;    
+        grid-template-areas: 
+            "head nav nav"
+            "side pic pic"
+            "side pic pic"
+    }        
+    .whosBar {
+        margin: 0;
+    }
+    .nav {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+    }
+    .logout {
+        align-self: flex-end;
+        order: -1;
+        margin: 2rem 2rem -0.5rem;
+    }
+}
+@media screen and (max-width: 22rem) {
+    body {
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        grid-template-rows: 170px 1fr;    
+        grid-template-areas: 
+            "head nav nav"
+            "side pic pic"
+            "side pic pic"
+    }    
+    .whosBar {
+        font-size: 20px;
+    }
+    .side-menu{
+        position: sticky;
+        top: 0.25rem;
+    }
+}
+@media only screen and (max-width: 50rem) and (orientation: landscape) {
+    body,html {
+        height: auto;
+    }
+}
